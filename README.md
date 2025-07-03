@@ -1,12 +1,6 @@
 # WebMart Seller Center
 
-1. Clone the repository
-   ```bash
-   git clone [your-repository-url]
-   cd webmart-seller
-   ```
-
-2. Install dependencies
+1. Install dependencies
    ```bash
    npm install
    # or
