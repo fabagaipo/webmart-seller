@@ -8,15 +8,10 @@ import {
     FiClock,
     FiShoppingBag,
     FiTrendingUp,
-    FiMenu,
-    FiX,
-    FiExternalLink
 } from 'react-icons/fi';
-import StoreHeader from './StoreHeader';
 
-const StoreManagement = ({ user }) => {
+const StoreManagement = () => {
     const navigate = useNavigate();
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [storeData, setStoreData] = useState({
         name: 'My Awesome Store',
         description: 'Your one-stop shop for amazing products',
@@ -27,18 +22,6 @@ const StoreManagement = ({ user }) => {
             { id: 3, name: 'Wireless Earbuds', description: 'True wireless earbuds with long battery life', price: '129.99', status: 'active' },
         ]
     });
-
-    // Toggle mobile menu
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-    };
-
-    // Close mobile menu when route changes
-    useEffect(() => {
-        const handleRouteChange = () => setIsMenuOpen(false);
-        window.addEventListener('popstate', handleRouteChange);
-        return () => window.removeEventListener('popstate', handleRouteChange);
-    }, [navigate]);
 
     const handleAddProduct = () => navigate('/store/dashboard/add-product');
     const handleEditStore = () => navigate('/store/dashboard/edit');
@@ -52,8 +35,6 @@ const StoreManagement = ({ user }) => {
 
     return (
         <div className="min-h-screen bg-gray-50 w-full overflow-x-hidden">
-            <StoreHeader onToggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />
-            
             <main className="w-full max-w-7xl mx-auto px-2 sm:px-4 lg:px-6 py-4 sm:py-6">
                 {/* Store Dashboard Header */}
                 <div className="bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl p-4 sm:p-6 text-white mb-6 sm:mb-8">

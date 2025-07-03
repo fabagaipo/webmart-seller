@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 
 import StoreManagement from './components/StoreManagement';
 import StoreHeader from './components/StoreHeader';
@@ -20,8 +20,7 @@ function AppContent() {
   useEffect(() => {
       const is404Page = location.pathname === '/404' || 
                       (location.state && location.state.is404);
-      const isStoreRoute = location.pathname.startsWith('/store');
-      setShowHeader(!is404Page && !isStoreRoute);
+      setShowHeader(!is404Page);
   }, [location]);
 
   return (
@@ -31,7 +30,7 @@ function AppContent() {
             <main className='flex-grow'>
               <Routes>
                 <Route path="/store/*" element={<StoreManagement />} />
-                <Route path="/" element={<StoreManagement />} />
+                <Route path="/" element={<Navigate to="/store/dashboard" replace />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </main>
