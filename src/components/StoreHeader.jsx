@@ -5,7 +5,7 @@ import { FiMenu, FiX, FiShoppingBag, FiExternalLink } from 'react-icons/fi';
 // Custom Store Header Component
 const StoreHeader = ({ onToggleMenu, isMenuOpen }) => {
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-40">
+    <header className="bg-blue-600 shadow-sm sticky top-0 z-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
@@ -16,8 +16,8 @@ const StoreHeader = ({ onToggleMenu, isMenuOpen }) => {
               {isMenuOpen ? <FiX className="h-6 w-6" /> : <FiMenu className="h-6 w-6" />}
             </button>
             <Link to="/store/dashboard" className="ml-4 flex items-center">
-              <FiShoppingBag className="h-6 w-6 text-indigo-600" />
-              <span className="ml-2 text-xl font-bold text-gray-900">Store Manager</span>
+              <FiShoppingBag className="h-6 w-6 text-white" />
+              <span className="ml-2 text-xl font-bold text-white">Store Manager</span>
             </Link>
           </div>
           
@@ -25,25 +25,25 @@ const StoreHeader = ({ onToggleMenu, isMenuOpen }) => {
             <div className="ml-10 flex items-center space-x-4">
               <Link
                 to="/store/dashboard"
-                className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600 hover:bg-indigo-50 rounded-md"
+                className="px-3 py-2 text-sm font-medium text-white rounded-md"
               >
                 Dashboard
               </Link>
               <Link
                 to="/store/orders"
-                className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600 hover:bg-indigo-50 rounded-md"
+                className="px-3 py-2 text-sm font-medium text-white rounded-md"
               >
                 Orders
               </Link>
               <Link
                 to="/store/products"
-                className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600 hover:bg-indigo-50 rounded-md"
+                className="px-3 py-2 text-sm font-medium text-white rounded-md"
               >
                 Products
               </Link>
               <Link
                 to="/store/analytics"
-                className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600 hover:bg-indigo-50 rounded-md"
+                className="px-3 py-2 text-sm font-medium text-white rounded-md"
               >
                 Analytics
               </Link>
@@ -52,10 +52,10 @@ const StoreHeader = ({ onToggleMenu, isMenuOpen }) => {
           
           <div className="flex items-center">
             <Link
-              to="/store/1"
+              to="http://localhost:4000/store/1"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden md:flex items-center px-3 py-2 text-sm font-medium text-indigo-600 hover:text-indigo-800 hover:bg-indigo-50 rounded-md"
+              className="hidden md:flex items-center px-3 py-2 text-sm font-medium text-white rounded-md"
             >
               <span>View Store</span>
               <FiExternalLink className="ml-1 h-4 w-4" />

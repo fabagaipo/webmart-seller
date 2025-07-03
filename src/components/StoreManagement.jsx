@@ -27,10 +27,10 @@ const StoreManagement = () => {
     const handleEditStore = () => navigate('/store/dashboard/edit');
 
     const stats = [
-        { label: 'Total Products', value: storeData.products?.length || 0, icon: <FiPackage className="w-5 h-5" />, color: 'indigo' },
-        { label: 'Active', value: storeData.products?.filter(p => p.status === 'active').length || 0, icon: <FiCheckCircle className="w-5 h-5" />, color: 'green' },
-        { label: 'Pending', value: storeData.products?.filter(p => p.status === 'pending').length || 0, icon: <FiClock className="w-5 h-5" />, color: 'yellow' },
-        { label: 'Total Sales', value: '₱5,299.95', icon: <FiTrendingUp className="w-5 h-5" />, color: 'purple' },
+        { label: 'Total Products', value: storeData.products?.length || 0, icon: <FiPackage className="w-5 h-5" />, color: 'bg-indigo-50 text-indigo-600' },
+        { label: 'Active', value: storeData.products?.filter(p => p.status === 'active').length || 0, icon: <FiCheckCircle className="w-5 h-5" />, color: 'bg-green-50 text-green-600' },
+        { label: 'Pending', value: storeData.products?.filter(p => p.status === 'pending').length || 0, icon: <FiClock className="w-5 h-5" />, color: 'bg-yellow-50 text-yellow-600' },
+        { label: 'Total Sales', value: '₱5,299.95', icon: <FiTrendingUp className="w-5 h-5" />, color: 'bg-purple-50 text-purple-600' },
     ];
 
     return (
@@ -45,10 +45,9 @@ const StoreManagement = () => {
                         </div>
                         <button
                             onClick={handleEditStore}
-                            className="flex items-center gap-2 px-5 py-2.5 bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300 rounded-lg font-medium text-sm border border-white/20"
+                            className="flex items-center gap-2 px-5 py-2.5 !bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300 rounded-lg font-medium text-sm border border-white/20"
                         >
                             <FiEdit2 size={16} />
-                            Edit Store
                         </button>
                     </div>
                 </div>
@@ -66,7 +65,7 @@ const StoreManagement = () => {
                                         <p className="text-sm font-medium text-gray-500">{stat.label}</p>
                                         <p className="text-2xl font-bold text-gray-900 mt-1">{stat.value}</p>
                                     </div>
-                                    <div className={`p-3 rounded-lg bg-${stat.color}-50 text-${stat.color}-600`}>
+                                    <div className={`p-3 rounded-lg ${stat.color}`}>
                                         {stat.icon}
                                     </div>
                                 </div>
@@ -115,7 +114,7 @@ const StoreManagement = () => {
                                     </div>
                                     <button
                                         onClick={handleAddProduct}
-                                        className="flex items-center gap-2 px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg transition-all duration-200 font-medium text-sm shadow-sm hover:shadow-md w-full sm:w-auto justify-center"
+                                        className="flex items-center gap-2 px-5 py-2.5 text-white rounded-lg transition-all duration-200 font-medium text-sm shadow-sm hover:shadow-md w-full sm:w-auto justify-center"
                                     >
                                         <FiPlus size={16} />
                                         Add Product
@@ -169,7 +168,7 @@ const StoreManagement = () => {
                                         <p className="text-gray-500 mt-1 mb-6">Add your first product to get started</p>
                                         <button
                                             onClick={handleAddProduct}
-                                            className="inline-flex items-center gap-2 px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg transition-colors font-medium text-sm shadow-sm hover:shadow-md"
+                                            className="inline-flex items-center gap-2 px-5 py-2.5 text-white rounded-lg transition-colors font-medium text-sm shadow-sm hover:shadow-md"
                                         >
                                             <FiPlus size={16} />
                                             Add Your First Product
